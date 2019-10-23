@@ -1,0 +1,14 @@
+<config>
+  <append xpath="/recipes">
+
+    <!-- SPIKE TRAPS -->
+    <recipe name="woodLogSpike1" count="1">
+    	<ingredient name="resourceWood" count="50"/>
+    </recipe>
+
+    <!-- TEMPORARY FIXES -->
+    <recipe name="cntStorageGeneric" count="1">
+    	<ingredient name="resourceWood" count="10"/>
+    </recipe>
+  </append>
+</config>
