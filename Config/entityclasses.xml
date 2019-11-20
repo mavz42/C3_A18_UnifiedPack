@@ -2,4 +2,84 @@
 <!-- Player inventory size -->
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='CarryCapacity'][@value='27']/@value">102</set>
 	<set xpath="/entity_classes/entity_class[@name='playerMale']/effect_group/passive_effect[@name='BagSize'][@value='45']/@value">120</set>
+
+	<!-- START INVENTORY - CHANGE IF NEEDED
+	<property name="ItemsOnEnterGame.GameModeSurvival" value="drinkJarBoiledWater,foodCanChili,medicalFirstAidBandage,meleeToolTorch,keystoneBlock,noteDuke01"/>
+	<property name="ItemsOnEnterGame.GameModeSurvivalSP" value="drinkJarBoiledWater,foodCanChili,medicalFirstAidBandage,meleeToolTorch,keystoneBlock"/>
+	<property name="ItemsOnEnterGame.GameModeSurvivalMP" value="drinkJarBoiledWater,foodCanChili,medicalFirstAidBandage,meleeToolTorch,keystoneBlock"/>
+	-->
+	<append xpath="/entity_classes">
+		<!-- CUSTOM ZOMBIES -->
+		<entity_class name="zombieUMATemplateMale" extends="zombieTemplateMale">
+			<property name="EntityType" value="Zombie"/>
+			<property name="Mesh" value="Zombies/zombie01Ragdoll"/>
+			<property name="Prefab" value="NPC"/>
+			<property name="Class" value="EntityZombie"/>
+			<property name="Parent" value="Enemies"/>
+			<property name="IsEnemyEntity" value="true"/>
+			<property name="HandItem" value="meleeHandZombie01"/>
+			<property name="SoundAlert" value="Enemies/Base_Zombie_Male/zombiemalealert"/>
+			<property name="SoundSense" value="Enemies/Base_Zombie_Male/zombiemalesense"/>
+			<property name="SoundHurt" value="Enemies/Base_Zombie_Male/zombiemalepain"/>
+			<property name="SoundDeath" value="Enemies/Base_Zombie_Male/zombiemaledeath"/>
+			<property name="SoundAttack" value="Enemies/Base_Zombie_Male/zombiemaleattack"/>
+			<property name="AttackTimeoutDay" value="1.5"/>
+			<property name="AttackTimeoutNight" value="1.1"/>
+			<property name="WalkType" value="7"/>
+			<property name="ModelType" value="ZombieUMA"/>
+			<property name="RootMotion" value="true"/>
+
+			<property name="HasRagdoll" value="true"/>
+			<property name="AvatarController" value="AvatarZombieUMAController"/>
+			<property name="PhysicsBody" value="zombieUMA"/>
+			<property name="HasDeathAnim" value="false"/>
+			<property name="TimeStayAfterDeath" value="30"/>
+			<property name="LootListOnDeath" value="15"/>
+			<property name="CorpseBlock" value="air"/><property name="CorpseBlockChance" value="0"/>
+		</entity_class>
+
+		<entity_class name="c3ZombieBoss" extends="zombieUMATemplateMale" >
+			<property name="Archetype" value="c3ZombieBoss"/>
+			<property name="Tags" value="entity,zombie,walker"/>
+			<property name="HandItem" value="meleeHandZombieBehemoth"/>
+			<property name="WalkType" value="1"/>
+			<property name="ExperienceGain" value="10000000"/>
+
+			<property name="DismemberMultiplierHead" value="0"/>
+			<property name="DismemberMultiplierArms" value="0"/>
+			<property name="DismemberMultiplierLegs" value="0"/>
+			<property name="LegCrawlerThreshold" value="0"/> <!-- at like .175 nearly every zombie knocked down from a leg hit turns into a crawler -->
+			<property name="LegCrippleThreshold" value="0"/>
+			<property name="KnockdownProneDamageThreshold" value="0"/>
+			<property name="KnockdownProneStunDuration" value="0"/>
+			<property name="KnockdownProneRefillRate" value="0"/>
+			<property name="KnockdownKneelDamageThreshold" value="0"/>
+			<property name="KnockdownKneelStunDuration" value="0"/>
+			<property name="KnockdownKneelRefillRate" value="0"/>
+			<property name="LegsExplosionDamageMultiplier" value="0"/>
+			<property name="ArmsExplosionDamageMultiplier" value="0"/>
+			<property name="HeadExplosionDamageMultiplier" value="0"/>
+			<property name="ChestExplosionDamageMultiplier" value="0"/>
+			<property name="PainResistPerHit" value="2"/>
+
+			<property name="AITask-1" value="BreakBlock"/>
+			<property name="AITask-2" value="DestroyArea"/>
+			<property name="AITask-3" value="Territorial"/>
+			<property name="AITask-4" value="ApproachDistraction"/>
+			<property name="AITask-5" value="ApproachAndAttackTarget" param1="EntityNPC,0,EntityPlayer,0"/>
+			<property name="AITask-6" value="ApproachSpot"/>
+			<property name="AITask-7" value="Look"/>
+			<property name="AITask-8" value="Wander"/>
+			<property name="AITarget-1" value="SetAsTargetIfHurt" param1="EntityNPC,EntityPlayer"/>
+			<property name="AITarget-2" value="BlockingTargetTask"/>
+			<property name="AITarget-3" value="SetNearestCorpseAsTarget" param1="EntityPlayer"/>
+			<property name="AITarget-4" value="SetNearestEntityAsTarget" param1="EntityPlayer,0,EntityNPC,0"/>
+
+			<effect_group name="Base Effects">
+				<passive_effect name="HealthMax" operation="base_set" value="50000"/>
+				<passive_effect name="HealthMax" operation="perc_set" value="1"/> <!-- Zombie HP scale -->
+			</effect_group>
+		</entity_class>
+	</append>
+
 </configs>

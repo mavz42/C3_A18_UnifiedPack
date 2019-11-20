@@ -4,12 +4,41 @@
   <set xpath="/items/item[@name='resourceForgedSteel']/property[@name='Stacknumber']/@value">6000</set>
 	<set xpath="/items/item[@name='resourceForgedIron']/property[@name='Stacknumber']/@value">6000</set>
 	<set xpath="/items/item[@name='resourceIronFragment']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceScrapIron']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='medicalFirstAidKit']/property[@name='Stacknumber']/@value">100</set>
+  <set xpath="/items/item[@name='resourceRepairKit']/property[@name='Stacknumber']/@value">100</set>
+
+  <!-- OTHER SET STUFF -->
+  <set xpath="/items/item[contains(@name, 'resourceRepairKit')]/property[@name='RepairTime']/@value">1</set>
+
+  <!-- MATS -->
+  <set xpath="/items/item[@name='resourceScrapPolymers']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceSewingKit']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceBone']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceLeather']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceCobblestones']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceAnimalFat']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceCement']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceConcreteMix']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceElectricParts']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceElectronicParts']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceMechanicalParts']/property[@name='Stacknumber']/@value">6000</set>
+
+  <!-- GUN STUFF -->
+  <set xpath="/items/item[@name='resourceGunPowder']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceBulletCasing']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceBulletTip']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceRocketCasing']/property[@name='Stacknumber']/@value">6000</set>
+  <set xpath="/items/item[@name='resourceRocketTip']/property[@name='Stacknumber']/@value">6000</set>
+
+  <!-- FORGE STUFF -->
+  <set xpath="/items/item[@name='unit_iron']/property[@name='Stacknumber']/@value">1000000</set>
 
   <!-- APPEND STUFF -->
   <append xpath="/items">
     <!-- CUSTOM ITEMS -->
     <item name="c3Hammer"> <!-- T2 Tools -->
-    	<property name="Tags" value="melee,light,tool,attStrength,perkMiner69r,perkMotherLode,canHaveCosmetic"/>
+    	<property name="Tags" value="melee,light,tool,attStrength"/>
       <property name="CreativeMode" value="Dev"/>
       <property name="CustomIcon" value="meleeToolClawHammer"/> <property name="CustomIconTint" value="96fa5e"/>
     	<property name="DisplayType" value="meleeRepairTool"/>
@@ -54,7 +83,7 @@
     		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
     		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
-    		<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15" tags="perkMiner69r"/> <!-- random DegMax -->
+    		<passive_effect name="DegradationMax" operation="perc_add" value="-.15,.15"/> <!-- random DegMax -->
     		<passive_effect name="AttacksPerMinute" operation="perc_add" value="-.05,.05"/> <!-- random APM -->
     		<passive_effect name="StaminaLoss" operation="perc_add" value="-.05,.05"/> <!-- random StamLoss -->
 
@@ -63,19 +92,17 @@
     		<passive_effect name="DamageModifier" operation="perc_add" value="-.75" tags="earth"/>
     		<passive_effect name="AttacksPerMinute" operation="base_set" value="70"/>
     		<passive_effect name="StaminaLoss" operation="base_set" value="0" tags="primary"/>
-    		<passive_effect name="DegradationMax" operation="base_set" value="2000,8000" tier="1,6" tags="perkMiner69r"/>
-    		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkMiner69r"/>
+    		<passive_effect name="DegradationMax" operation="base_set" value="2000,8000" tier="1,6"/>
+    		<passive_effect name="DegradationPerUse" operation="base_set" value="0"/>
     		<passive_effect name="ModSlots" operation="base_set" value="1,1,2,2,3,4" tier="1,2,3,4,5,6"/>
     		<passive_effect name="ModPowerBonus" operation="perc_add" value=".10" tags="EntityDamage,BlockDamage"/>
     		<passive_effect name="ModPowerBonus" operation="base_add" value="200" tags="EconomicValue"/>
     	</effect_group>
-    	<property name="Group" value="Tools/Traps"/>
-    	<property name="RepairExpMultiplier" value="25"/>
     </item>
 
     <item name="c3Auger"> <!-- T4 Tools -->
       <property name="CreativeMode" value="Dev"/>
-    	<property name="Tags" value="melee,heavy,tool,motorTool,attStrength,perkMiner69r,perkMotherLode,miningTool,canHaveCosmetic"/>
+    	<property name="Tags" value="melee,heavy,tool,motorTool"/>
       <property name="CustomIcon" value="meleeToolAuger"/> <property name="CustomIconTint" value="96fa5e"/>
     	<property name="DisplayType" value="motorTool"/>
     	<property name="HoldType" value="20"/>
@@ -87,7 +114,6 @@
     	<property name="Group" value="Tools/Traps"/>
     	<property name="RepairExpMultiplier" value="10.8"/>
     	<property name="EconomicValue" value="1500"/>
-    	<property name="UnlockedBy" value="perkAdvancedEngineering,meleeToolAugerSchematic"/>
     	<property name="ShowQuality" value="true"/>
 
     	<property class="Action0">
@@ -127,7 +153,7 @@
     		<passive_effect name="BlockDamage" operation="perc_add" value="-.15,.15"/> <!-- random BlockDmg -->
     		<passive_effect name="BlockDamage" operation="perc_add" value=".1,.5" tier="2,6"/> <!-- tier bonus -->
 
-    		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2" tags="perkMiner69r"/> <!-- random DegMax -->
+    		<passive_effect name="DegradationMax" operation="perc_add" value="-.2,.2"/> <!-- random DegMax -->
     		<passive_effect name="RoundsPerMinute" operation="perc_add" value="-.05,.05"/> <!-- random APM -->
     		<passive_effect name="MagazineSize" operation="perc_add" value="-.122,.122"/> <!-- random MagazineSize -->
     		<passive_effect name="WeaponHandling" operation="perc_add" value="-.08,.08"/> <!-- random WeaponHandling -->
@@ -155,8 +181,29 @@
     		<passive_effect name="IncrementalSpreadMultiplier" operation="base_set" value="1"/>
     		<passive_effect name="WeaponHandling" operation="base_set" value="5"/>
 
-    		<passive_effect name="DegradationMax" operation="base_set" value="7000,21000" tier="1,6" tags="perkMiner69r"/>
-    		<passive_effect name="DegradationPerUse" operation="base_set" value="0" tags="perkMiner69r"/>
+    		<passive_effect name="DegradationMax" operation="base_set" value="7000,21000" tier="1,6"/>
+    		<passive_effect name="DegradationPerUse" operation="base_set" value="0"/>
+    	</effect_group>
+    </item>
+
+    <!-- MOD SCHEMATICS -->
+    <item name="modGunMeleeC3BrawlSchematic">
+    	<property name="Extends" value="schematicMaster"/>
+    	<property name="CreativeMode" value="Test"/>
+    	<property name="CustomIcon" value="meleeKnucklesSteel"/>
+    	<property name="Unlocks" value="modGunMeleeC3Brawl"/>
+    	<effect_group tiered="false">
+    		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
+    	</effect_group>
+    </item>
+
+    <item name="modArmorC3ChestSchematic">
+    	<property name="Extends" value="schematicMaster"/>
+    	<property name="CreativeMode" value="Test"/>
+    	<property name="CustomIcon" value="meleeKnucklesSteel"/>
+    	<property name="Unlocks" value="modArmorC3Chest"/>
+    	<effect_group tiered="false">
+    		<triggered_effect trigger="onSelfPrimaryActionEnd" action="GiveExp" exp="50"/>
     	</effect_group>
     </item>
   </append>

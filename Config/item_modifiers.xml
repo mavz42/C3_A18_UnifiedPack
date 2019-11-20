@@ -1,0 +1,39 @@
+<config>
+  <append xpath="/item_modifiers">
+    <!-- MELEE MODS -->
+    <item_modifier name="modGunMeleeC3Brawl" installable_tags="weapon" modifier_tags="damage" type="attachment">
+      <property name="CreativeMode" value="Dev"/>
+  		<property name="UnlockedBy" value="modGunMeleeC3BrawlSchematic"/>
+  		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+  		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+  		<property name="CustomIcon" value="candle"/>
+  		<effect_group tiered="false">
+  			<passive_effect name="EntityDamage" operation="perc_add" value="10"/>
+        <passive_effect name="CriticalChance" operation="perc_add" value="5"/>
+        <passive_effect name="DismemberChance" operation="perc_add" value="5" tags="primary"/>
+        <passive_effect name="DismemberChance" operation="perc_add" value="15" tags="secondary"/>
+  		</effect_group>
+      <effect_group tiered="false">
+  			<triggered_effect trigger="onSelfAttackedOther" action="AddBuff" target="other" buff="buffInjuryKnockdown01"/>
+  		</effect_group>
+  		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+  	</item_modifier>
+
+    <!-- ARMOR MODS -->
+    <item_modifier name="modArmorC3Chest" installable_tags="armorChest" modifier_tags="resistance" type="attachment">
+      <property name="CreativeMode" value="Dev"/>
+  		<property name="UnlockedBy" value="modArmorC3ChestSchematic"/>
+  		<property name="Stacknumber" value="1"/> <property name="Group" value="Mods"/>
+  		<property name="DropMeshfile" value="#Other/Items?Misc/sack_droppedPrefab.prefab"/>
+      <property name="CustomIcon" value="candle"/>
+  		<effect_group tiered="false">
+        <passive_effect name="PhysicalDamageResist" operation="base_add" value="30"/>
+        <passive_effect name="HypothermalResist" operation="base_add" value="50"/>
+  			<passive_effect name="HyperthermalResist" operation="base_add" value="50"/>
+        <passive_effect name="WalkSpeed" operation="perc_add" value=".2"/>
+  			<passive_effect name="RunSpeed" operation="perc_add" value=".2"/>
+  		</effect_group>
+  		<property name="PickupJournalEntry" value="augmentGunsTip"/>
+  	</item_modifier>
+  </append>
+</config>

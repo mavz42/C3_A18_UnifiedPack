@@ -1,3 +1,14 @@
+<!--
+
+CRAFT AREAS:
+craft_area="workbench"
+craft_area="cementMixer"
+craft_area="forge"
+craft_area="chemistryStation"
+craft_area="tablesaw"
+craft_area="campfire"
+
+-->
 <config>
   <append xpath="/recipes">
 
@@ -9,6 +20,75 @@
     <!-- TEMPORARY FIXES -->
     <recipe name="cntStorageGeneric" count="1">
     	<ingredient name="resourceWood" count="10"/>
+    </recipe>
+
+    <recipe name="barbedWireSheet" count="5">
+      <ingredient name="resourceScrapIron" count="10"/>
+    </recipe>
+
+    <recipe name="jailBars" count="5">
+      <ingredient name="resourceForgedSteel" count="20"/>
+      <ingredient name="resourceSpring" count="3"/>
+    </recipe>
+
+    <recipe name="jailDoor" count="1" craft_area="workbench">
+    	<ingredient name="resourceForgedSteel" count="35"/>
+    	<ingredient name="resourceSpring" count="5"/>
+    	<ingredient name="resourceMechanicalParts" count="2"/>
+    </recipe>
+
+    <recipe name="glassBulletproofBlock" count="1" material_based="true" craft_area="forge">
+      <ingredient name="unit_glass" count="110"/>
+      <ingredient name="unit_stone" count="10"/>
+      <ingredient name="unit_lead" count="40"/>
+      <ingredient name="unit_iron" count="20"/>
+      <ingredient name="unit_clay" count="10"/>
+    </recipe>
+
+    <recipe name="glassBulletproofPlate" count="1" material_based="true" craft_area="forge">
+      <ingredient name="unit_glass" count="110"/>
+      <ingredient name="unit_stone" count="10"/>
+      <ingredient name="unit_lead" count="40"/>
+      <ingredient name="unit_iron" count="20"/>
+      <ingredient name="unit_clay" count="10"/>
+    </recipe>
+
+    <recipe name="glassBulletproofCTRPlate" count="1" material_based="true" craft_area="forge">
+      <ingredient name="unit_glass" count="110"/>
+      <ingredient name="unit_stone" count="10"/>
+      <ingredient name="unit_lead" count="40"/>
+      <ingredient name="unit_iron" count="20"/>
+      <ingredient name="unit_clay" count="10"/>
+    </recipe>
+
+    <recipe name="glassBulletproofPlateCurved" count="1" material_based="true" craft_area="forge">
+      <ingredient name="unit_glass" count="110"/>
+      <ingredient name="unit_stone" count="10"/>
+      <ingredient name="unit_lead" count="40"/>
+      <ingredient name="unit_iron" count="20"/>
+      <ingredient name="unit_clay" count="10"/>
+    </recipe>
+
+    <recipe name="glassBulletproofRamp" count="1" material_based="true" craft_area="forge">
+      <ingredient name="unit_glass" count="110"/>
+      <ingredient name="unit_stone" count="10"/>
+      <ingredient name="unit_lead" count="40"/>
+      <ingredient name="unit_iron" count="20"/>
+      <ingredient name="unit_clay" count="10"/>
+    </recipe>
+
+    <!-- BUILD STUFF -->
+    <recipe name="woodCross" count="1">
+      <ingredient name="resourceWood" count="20"/>
+    </recipe>
+
+    <recipe name="scrapIronCross" count="1">
+      <ingredient name="resourceScrapIron" count="20"/>
+    </recipe>
+
+    <!-- CEMENT MIXER RECIPES -->
+    <recipe name="terrAsphalt" count="1" craft_area="cementMixer" tags="cementMixerCrafting">
+    	<ingredient name="resourceRockSmall" count="10"/>
     </recipe>
   </append>
 </config>
