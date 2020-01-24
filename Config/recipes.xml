@@ -13,7 +13,7 @@ craft_area="campfire"
   <append xpath="/recipes">
 
     <!-- SPIKE TRAPS -->
-    <recipe name="woodLogSpike1" count="1">
+    <recipe name="woodLogSpike1" count="1" craft_area="workbench">
     	<ingredient name="resourceWood" count="50"/>
     </recipe>
 
@@ -26,7 +26,7 @@ craft_area="campfire"
       <ingredient name="resourceScrapIron" count="10"/>
     </recipe>
 
-    <recipe name="jailBars" count="5">
+    <recipe name="jailBars" count="5" craft_area="workbench">
       <ingredient name="resourceForgedSteel" count="20"/>
       <ingredient name="resourceSpring" count="3"/>
     </recipe>
@@ -78,32 +78,17 @@ craft_area="campfire"
     </recipe>
 
     <!-- BUILD STUFF -->
-    <recipe name="woodCross" count="1">
+    <recipe name="woodCross" count="1" craft_area="workbench">
       <ingredient name="resourceWood" count="20"/>
     </recipe>
 
-    <recipe name="scrapIronCross" count="1">
+    <recipe name="scrapIronCross" count="1" craft_area="workbench">
       <ingredient name="resourceScrapIron" count="20"/>
     </recipe>
 
     <!-- CEMENT MIXER RECIPES -->
     <recipe name="terrAsphalt" count="1" craft_area="cementMixer" tags="cementMixerCrafting">
     	<ingredient name="resourceRockSmall" count="10"/>
-    </recipe>
-  </append>
-
-  <!-- MILITARY TABLET -->
-  <append xpath="/recipes">	
-    <recipe name="Tablet" count="1" craft_area="workbench" craft_time="5">
-    	<ingredient name="resourceElectricParts" count="25"/>
-    <ingredient name="resourceForgedIron" count="5"/>
-    	<ingredient name="resourceScrapPolymers" count="8"/>
-    </recipe>
-
-    <recipe name="Smartphone" count="1" craft_area="workbench" craft_time="5">
-    	<ingredient name="resourceElectricParts" count="15"/>
-    <ingredient name="resourceForgedIron" count="5"/>
-    	<ingredient name="resourceScrapPolymers" count="5"/>
     </recipe>
   </append>
 </config>
